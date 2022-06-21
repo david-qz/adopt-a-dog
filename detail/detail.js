@@ -10,21 +10,22 @@ let dog = {};
 
 // write handler functions
 async function handlePageLoad() {
-    // *** Get the id from search params and assign to "id" variable
-
+    // Get the id from search params and assign to "id" variable
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
 
     if (!id) window.location = '/';
 
-    // *** Use the id to get this dog (async, so you need to "await"!)
+    // Use the id to get this dog (async, so you need to "await"!)
     // and assign to "dog" variable
-
+    dog = await getDog(id);
 
     if (!dog) window.location = '/';
 
     display();
 }
 
-// Create each component: 
+// Create each component:
 const DogName = createDogName(document.querySelector('h1'));
 const DogDetail = createDogDetail(document.querySelector('#dog-detail'));
 
@@ -38,6 +39,3 @@ function display() {
 handlePageLoad();
 // No need to display until loaded!
 // display();
-
-
-
