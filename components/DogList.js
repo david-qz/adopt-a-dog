@@ -22,7 +22,9 @@ export function DogCard({ dog }) {
 
     p.textContent = dog.name;
     img.src = `./assets/dogs/${dog.breed}.jpeg`;
-    a.href = ''; // *** link to the dog detail passing the id as a query param
+    const params = new URLSearchParams();
+    params.set('id', dog.id);
+    a.href = `detail/?${params.toString()}`; // link to the dog detail passing the id as a query param
 
     a.append(p, img);
 
