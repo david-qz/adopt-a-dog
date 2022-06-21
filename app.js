@@ -9,13 +9,13 @@ let dogs = [];
 
 // write handler functions
 async function handlePageLoad() {
-    // *** Get all the dogs (async, so you need to "await")
+    // Get all the dogs (async, so you need to "await")
     // and assign to "dogs" variable
-
+    dogs = await getDogs();
     display();
 }
 
-// Create each component: 
+// Create each component:
 const DogList = createDogList(document.querySelector('#dog-list'));
 
 // Roll-up display function that renders (calls with state) each component
@@ -28,6 +28,3 @@ handlePageLoad();
 
 // no need to display until loaded!
 // display();
-
-
-
