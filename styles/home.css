@@ -1,0 +1,38 @@
+
+#dog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+.dog-card {
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 1px black;
+    background: white;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+
+    display: grid;
+    grid-template-rows: 25% 75%;
+    justify-items: center;
+    align-items: center;
+}
+
+.dog-card:hover {
+    background: rgb(248, 222, 188);
+}
+
+.dog-card a {
+    display: contents;
+    color: initial;
+}
+
+.dog-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
